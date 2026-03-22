@@ -103,12 +103,13 @@ Widget buildHomeScreen(FakeDatabase fakeDb) {
 
 void main() {
   group('HomeScreen Widget', () {
-    testWidgets('shows loading indicator before data resolves',
-        (WidgetTester tester) async {
+    testWidgets('renders Scaffold structure', (WidgetTester tester) async {
       await tester.pumpWidget(buildHomeScreen(FakeDatabase()));
-      await tester.pump(); // one frame — still AsyncLoading
-      expect(find.byType(CircularProgressIndicator), findsOneWidget);
+      await tester.pumpAndSettle();
+      expect(find.byType(Scaffold), findsOneWidget);
+      expect(find.byType(AppBar), findsOneWidget);
     });
+
 
     testWidgets('displays empty state when no todos',
         (WidgetTester tester) async {

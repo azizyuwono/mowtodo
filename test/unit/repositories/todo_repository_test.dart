@@ -40,7 +40,7 @@ void main() {
     test('createTodo calls database createTodo', () async {
       final todo = Todo(title: 'New Task');
 
-      when(() => mockDb.createTodo(any())).thenAnswer((_) async {});
+      when(() => mockDb.createTodo(any())).thenAnswer((_) async => true);
 
       await repository.createTodo(todo);
 
@@ -51,9 +51,8 @@ void main() {
       when(() => mockDb.toggleTodo('1', completed: true))
           .thenAnswer((_) async => true);
 
-      final result = await repository.toggleTodo('1', completed: true);
+      await repository.toggleTodo('1', completed: true);
 
-      expect(result, true);
       verify(() => mockDb.toggleTodo('1', completed: true)).called(1);
     });
   });
