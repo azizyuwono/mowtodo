@@ -6,9 +6,15 @@ import 'package:mowtodo/repositories/todo_repository.dart';
 
 class MockAppDatabase extends Mock implements AppDatabase {}
 
+class FakeTodoData extends Fake implements TodoData {}
+
 void main() {
   late MockAppDatabase mockDb;
   late TodoRepository repository;
+
+  setUpAll(() {
+    registerFallbackValue(FakeTodoData());
+  });
 
   setUp(() {
     mockDb = MockAppDatabase();
@@ -40,11 +46,12 @@ void main() {
     test('createTodo calls database createTodo', () async {
       final todo = Todo(title: 'New Task');
 
-      when(() => mockDb.createTodo(any())).thenAnswer((_) async {});
+      when(() => mockDb.createTodo(any(that: isNotNull)))
+          .thenAnswer((_) async {});
 
       await repository.createTodo(todo);
 
-      verify(() => mockDb.createTodo(any())).called(1);
+      verify(() => mockDb.createTodo(any(that: isNotNull))).called(1);
     });
 
     test('toggleTodo calls database toggleTodo with correct completed flag', () async {

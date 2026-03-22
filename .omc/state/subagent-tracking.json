@@ -5,7 +5,9 @@
       "agent_type": "voltagent-lang:flutter-expert",
       "started_at": "2026-03-22T18:57:36.952Z",
       "parent_mode": "none",
-      "status": "running"
+      "status": "completed",
+      "completed_at": "2026-03-22T19:42:33.441Z",
+      "duration_ms": 2696489
     },
     {
       "agent_id": "a1990898928d435ae",
@@ -30,7 +32,9 @@
       "agent_type": "voltagent-lang:flutter-expert",
       "started_at": "2026-03-22T18:58:59.018Z",
       "parent_mode": "none",
-      "status": "running"
+      "status": "completed",
+      "completed_at": "2026-03-22T19:42:01.840Z",
+      "duration_ms": 2582822
     },
     {
       "agent_id": "aaa63b7e9f41abc5d",
@@ -43,7 +47,7 @@
     }
   ],
   "total_spawned": 5,
-  "total_completed": 3,
+  "total_completed": 5,
   "total_failed": 0,
-  "last_updated": "2026-03-22T19:25:28.228Z"
+  "last_updated": "2026-03-22T19:42:33.552Z"
 }

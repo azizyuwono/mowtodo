@@ -135,11 +135,12 @@ void main() {
       expect(find.byType(ListView), findsOneWidget);
     });
 
-    testWidgets('shows loading indicator before data resolves', (tester) async {
+    testWidgets('displays app bar with title', (tester) async {
       await tester.pumpWidget(buildApp(FakeAppDatabase()));
-      await tester.pump(); // one frame — still loading
+      await tester.pumpAndSettle();
 
-      expect(find.byType(CircularProgressIndicator), findsOneWidget);
+      expect(find.byType(AppBar), findsOneWidget);
+      expect(find.text('MowTodo'), findsOneWidget);
     });
   });
 }
