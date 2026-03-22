@@ -72,8 +72,8 @@ class TodoRepository {
     return deleted ? 1 : 0;
   }
 
-  Future<void> toggleTodo(String id, {required bool completed}) async {
-    await _database.toggleTodo(id, completed: completed);
+  Future<bool> toggleTodo(String id, {required bool completed}) {
+    return _database.toggleTodo(id, completed: completed);
   }
 
   // Mapper

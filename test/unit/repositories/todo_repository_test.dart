@@ -40,7 +40,7 @@ void main() {
     test('createTodo calls database createTodo', () async {
       final todo = Todo(title: 'New Task');
 
-      when(() => mockDb.createTodo(any())).thenAnswer((_) async => true);
+      when(() => mockDb.createTodo(any())).thenAnswer((_) async {});
 
       await repository.createTodo(todo);
 

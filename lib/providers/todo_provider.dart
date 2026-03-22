@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../core/database/todo_database.dart' as db_interface;
 import '../models/todo.dart';
 import '../repositories/todo_repository.dart';
 import 'database_provider.dart';
@@ -7,7 +6,7 @@ import 'database_provider.dart';
 final todoRepositoryProvider = Provider((ref) {
   final db = ref.watch(databaseProvider).valueOrNull;
   if (db == null) throw StateError('Database not initialized');
-  return TodoRepository(db as db_interface.AppDatabase);
+  return TodoRepository(db);
 });
 
 final todoListProvider = StreamProvider<List<Todo>>((ref) async* {
