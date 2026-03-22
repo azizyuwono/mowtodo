@@ -1,8 +1,6 @@
 import '../../models/todo.dart';
 
 /// Plain data class representing a persisted todo row.
-/// Uses the domain [Priority] enum directly — the concrete Drift
-/// implementation is responsible for converting int <-> Priority.
 class TodoData {
   final String id;
   final String title;
@@ -23,9 +21,7 @@ class TodoData {
   });
 }
 
-/// Abstract database interface used by [TodoRepository].
-/// Keeping this separate from the Drift concrete class allows the
-/// repository to be tested without a real SQLite engine.
+/// Abstract database interface.
 abstract class AppDatabase {
   Future<List<TodoData>> getAllTodos();
   Future<List<TodoData>> getActiveTodos();
@@ -33,7 +29,7 @@ abstract class AppDatabase {
   Future<void> createTodo(TodoData todo);
   Future<bool> updateTodo(TodoData todo);
   Future<bool> deleteTodo(String id);
-  Future<bool> toggleTodo(String id);
+  Future<bool> toggleTodo(String id, {required bool completed});
   Future<int> getTodoCount();
   Stream<List<TodoData>> watchAllTodos();
   Stream<List<TodoData>> watchActiveTodos();

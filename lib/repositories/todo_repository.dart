@@ -1,6 +1,4 @@
-import 'package:drift/drift.dart';
-
-import '../core/database/app_database.dart';
+import '../core/database/todo_database.dart';
 import '../models/todo.dart';
 
 class TodoRepository {
@@ -12,6 +10,18 @@ class TodoRepository {
     final items = await _database.getAllTodos();
     return items.map(_toDomain).toList();
   }
+
+  Future<List<Todo>> getActiveTodos() async {
+    final items = await _database.getActiveTodos();
+    return items.map(_toDomain).toList();
+  }
+
+  Future<List<Todo>> getCompletedTodos() async {
+    final items = await _database.getCompletedTodos();
+    return items.map(_toDomain).toList();
+  }
+
+  Future<int> getTodoCount() => _database.getTodoCount();
 
   Stream<List<Todo>> watchActiveTodos() {
     return _database.watchActiveTodos().map(
@@ -32,74 +42,51 @@ class TodoRepository {
   }
 
   Future<void> createTodo(Todo todo) async {
-    final companion = TodoItemsCompanion(
-      id: Value(todo.id),
-      title: Value(todo.title),
-      description: Value(todo.description),
-      isCompleted: Value(todo.isCompleted),
-      priority: Value(_priorityToInt(todo.priority)),
-      createdAt: Value(todo.createdAt),
-      dueDate: Value(todo.dueDate),
+    final data = TodoData(
+      id: todo.id,
+      title: todo.title,
+      description: todo.description,
+      isCompleted: todo.isCompleted,
+      priority: todo.priority,
+      createdAt: todo.createdAt,
+      dueDate: todo.dueDate,
     );
-    await _database.insertTodo(companion);
+    await _database.createTodo(data);
   }
 
   Future<bool> updateTodo(Todo todo) async {
-    final companion = TodoItemsCompanion(
-      id: Value(todo.id),
-      title: Value(todo.title),
-      description: Value(todo.description),
-      isCompleted: Value(todo.isCompleted),
-      priority: Value(_priorityToInt(todo.priority)),
-      createdAt: Value(todo.createdAt),
-      dueDate: Value(todo.dueDate),
+    final data = TodoData(
+      id: todo.id,
+      title: todo.title,
+      description: todo.description,
+      isCompleted: todo.isCompleted,
+      priority: todo.priority,
+      createdAt: todo.createdAt,
+      dueDate: todo.dueDate,
     );
-    return _database.updateTodo(companion);
+    return _database.updateTodo(data);
   }
 
   Future<int> deleteTodo(String id) async {
-    return _database.deleteTodoById(id);
+    final deleted = await _database.deleteTodo(id);
+    return deleted ? 1 : 0;
   }
 
   Future<void> toggleTodo(String id, {required bool completed}) async {
-    return _database.toggleTodoCompleted(id, completed: completed);
+    await _database.toggleTodo(id, completed: completed);
   }
 
-  // Mappers
+  // Mapper
 
-  Todo _toDomain(TodoItem item) {
+  Todo _toDomain(TodoData data) {
     return Todo(
-      id: item.id,
-      title: item.title,
-      description: item.description,
-      isCompleted: item.isCompleted,
-      priority: _intToPriority(item.priority),
-      createdAt: item.createdAt,
-      dueDate: item.dueDate,
+      id: data.id,
+      title: data.title,
+      description: data.description,
+      isCompleted: data.isCompleted,
+      priority: data.priority,
+      createdAt: data.createdAt,
+      dueDate: data.dueDate,
     );
-  }
-
-  int _priorityToInt(Priority priority) {
-    switch (priority) {
-      case Priority.low:
-        return 0;
-      case Priority.medium:
-        return 1;
-      case Priority.high:
-        return 2;
-    }
-  }
-
-  Priority _intToPriority(int value) {
-    switch (value) {
-      case 0:
-        return Priority.low;
-      case 1:
-        return Priority.medium;
-      case 2:
-        return Priority.high;
-      default:
-        return Priority.medium;
-    }
   }
 }

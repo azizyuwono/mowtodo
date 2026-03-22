@@ -1,0 +1,133 @@
+{
+  "updatedAt": "2026-03-22T19:25:28.106Z",
+  "missions": [
+    {
+      "id": "session:20c608fb-e383-4519-9f24-de1e7a588151:none",
+      "source": "session",
+      "name": "none",
+      "objective": "Session mission",
+      "createdAt": "2026-03-22T18:57:36.952Z",
+      "updatedAt": "2026-03-22T19:25:28.106Z",
+      "status": "running",
+      "workerCount": 5,
+      "taskCounts": {
+        "total": 5,
+        "pending": 0,
+        "blocked": 0,
+        "inProgress": 1,
+        "completed": 4,
+        "failed": 0
+      },
+      "agents": [
+        {
+          "name": "voltagent-lang:flutter-expert:a3b47f3",
+          "role": "voltagent-lang:flutter-expert",
+          "ownership": "a3b47f3cdf8689652",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-03-22T19:00:39.812Z"
+        },
+        {
+          "name": "voltagent-lang:flutter-expert:a199089",
+          "role": "voltagent-lang:flutter-expert",
+          "ownership": "a1990898928d435ae",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-03-22T19:06:09.097Z"
+        },
+        {
+          "name": "voltagent-lang:flutter-expert:a3c1d86",
+          "role": "voltagent-lang:flutter-expert",
+          "ownership": "a3c1d86ae2a96695d",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-03-22T19:25:28.106Z"
+        },
+        {
+          "name": "voltagent-lang:flutter-expert:aa96c30",
+          "role": "voltagent-lang:flutter-expert",
+          "ownership": "aa96c30a4459b2ce5",
+          "status": "running",
+          "currentStep": null,
+          "latestUpdate": null,
+          "completedSummary": null,
+          "updatedAt": "2026-03-22T18:58:59.018Z"
+        },
+        {
+          "name": "voltagent-infra:devops-engineer:aaa63b7",
+          "role": "voltagent-infra:devops-engineer",
+          "ownership": "aaa63b7e9f41abc5d",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-03-22T19:04:45.234Z"
+        }
+      ],
+      "timeline": [
+        {
+          "id": "session-start:a3c1d86ae2a96695d:2026-03-22T18:58:28.227Z",
+          "at": "2026-03-22T18:58:28.227Z",
+          "kind": "update",
+          "agent": "voltagent-lang:flutter-expert:a3c1d86",
+          "detail": "started voltagent-lang:flutter-expert:a3c1d86",
+          "sourceKey": "session-start:a3c1d86ae2a96695d"
+        },
+        {
+          "id": "session-start:aa96c30a4459b2ce5:2026-03-22T18:58:59.018Z",
+          "at": "2026-03-22T18:58:59.018Z",
+          "kind": "update",
+          "agent": "voltagent-lang:flutter-expert:aa96c30",
+          "detail": "started voltagent-lang:flutter-expert:aa96c30",
+          "sourceKey": "session-start:aa96c30a4459b2ce5"
+        },
+        {
+          "id": "session-start:aaa63b7e9f41abc5d:2026-03-22T19:00:01.191Z",
+          "at": "2026-03-22T19:00:01.191Z",
+          "kind": "update",
+          "agent": "voltagent-infra:devops-engineer:aaa63b7",
+          "detail": "started voltagent-infra:devops-engineer:aaa63b7",
+          "sourceKey": "session-start:aaa63b7e9f41abc5d"
+        },
+        {
+          "id": "session-stop:ad272450be52b262e:2026-03-22T19:00:39.812Z",
+          "at": "2026-03-22T19:00:39.812Z",
+          "kind": "completion",
+          "agent": "voltagent-lang:flutter-expert:a3b47f3",
+          "detail": "completed",
+          "sourceKey": "session-stop:ad272450be52b262e"
+        },
+        {
+          "id": "session-stop:aaa63b7e9f41abc5d:2026-03-22T19:04:45.234Z",
+          "at": "2026-03-22T19:04:45.234Z",
+          "kind": "completion",
+          "agent": "voltagent-infra:devops-engineer:aaa63b7",
+          "detail": "completed",
+          "sourceKey": "session-stop:aaa63b7e9f41abc5d"
+        },
+        {
+          "id": "session-stop:a1990898928d435ae:2026-03-22T19:06:09.097Z",
+          "at": "2026-03-22T19:06:09.097Z",
+          "kind": "completion",
+          "agent": "voltagent-lang:flutter-expert:a199089",
+          "detail": "completed",
+          "sourceKey": "session-stop:a1990898928d435ae"
+        },
+        {
+          "id": "session-stop:a3c1d86ae2a96695d:2026-03-22T19:25:28.106Z",
+          "at": "2026-03-22T19:25:28.106Z",
+          "kind": "completion",
+          "agent": "voltagent-lang:flutter-expert:a3c1d86",
+          "detail": "completed",
+          "sourceKey": "session-stop:a3c1d86ae2a96695d"
+        }
+      ]
+    }
+  ]
+}

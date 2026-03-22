@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd \\\"/c/Users/Aziz Yuwono/Documents/Development/desktop/mowtodo\\\" && flutter analyze 2>&1\",\"timeout\":120000,\"description\":\"Run flutter analyze\"}",
+  "error": "Exit code 1\nAnalyzing mowtodo...                                            \n\nwarning - Unnecessary cast - lib\\providers\\todo_provider.dart:10:25 - unnecessary_cast\n  error - This expression has a type of 'void' so its value can't be used - test\\unit\\repositories\\todo_repository_test.dart:56:14 - use_of_void_result\n\n2 issues found. (ran in 9.2s)",
+  "timestamp": "2026-03-22T19:35:03.316Z",
+  "retry_count": 1
+}

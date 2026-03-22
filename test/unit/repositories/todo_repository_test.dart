@@ -10,24 +10,14 @@ void main() {
   late MockAppDatabase mockDb;
   late TodoRepository repository;
 
-  setUpAll(() {
-    registerFallbackValue(TodoData(
-      id: 'fallback',
-      title: 'fallback',
-      isCompleted: false,
-      priority: Priority.medium,
-      createdAt: DateTime.fromMillisecondsSinceEpoch(0),
-    ));
-  });
-
   setUp(() {
     mockDb = MockAppDatabase();
     repository = TodoRepository(mockDb);
   });
 
   group('TodoRepository', () {
-    test('getAllTodos returns list of todos', () async {
-      final todo = TodoData(
+    test('getAllTodos returns mapped list of domain todos', () async {
+      final data = TodoData(
         id: '1',
         title: 'Test',
         description: null,
@@ -37,16 +27,17 @@ void main() {
         dueDate: null,
       );
 
-      when(() => mockDb.getAllTodos()).thenAnswer((_) async => [todo]);
+      when(() => mockDb.getAllTodos()).thenAnswer((_) async => [data]);
 
       final result = await repository.getAllTodos();
 
       expect(result, isNotEmpty);
       expect(result.first.title, 'Test');
+      expect(result.first.priority, Priority.medium);
       verify(() => mockDb.getAllTodos()).called(1);
     });
 
-    test('createTodo calls database insert', () async {
+    test('createTodo calls database createTodo', () async {
       final todo = Todo(title: 'New Task');
 
       when(() => mockDb.createTodo(any())).thenAnswer((_) async {});
@@ -56,13 +47,14 @@ void main() {
       verify(() => mockDb.createTodo(any())).called(1);
     });
 
-    test('toggleTodo calls database update', () async {
-      when(() => mockDb.toggleTodo('1')).thenAnswer((_) async => true);
+    test('toggleTodo calls database toggleTodo with correct completed flag', () async {
+      when(() => mockDb.toggleTodo('1', completed: true))
+          .thenAnswer((_) async => true);
 
-      final result = await repository.toggleTodo('1');
+      final result = await repository.toggleTodo('1', completed: true);
 
       expect(result, true);
-      verify(() => mockDb.toggleTodo('1')).called(1);
+      verify(() => mockDb.toggleTodo('1', completed: true)).called(1);
     });
   });
 }

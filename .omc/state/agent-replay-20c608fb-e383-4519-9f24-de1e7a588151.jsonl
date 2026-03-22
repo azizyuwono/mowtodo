@@ -1,0 +1,13 @@
+{"t":0,"agent":"a7da32e","agent_type":"unknown","event":"agent_stop","success":true}
+{"t":0,"agent":"system","event":"skill_invoked","skill_name":"superpowers:writing-plans"}
+{"t":0,"agent":"a7a8205","agent_type":"unknown","event":"agent_stop","success":true}
+{"t":0,"agent":"system","event":"skill_invoked","skill_name":"superpowers:subagent-driven-development"}
+{"t":0,"agent":"a3b47f3","agent_type":"voltagent-lang:flutter-expert","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a199089","agent_type":"voltagent-lang:flutter-expert","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"a3c1d86","agent_type":"voltagent-lang:flutter-expert","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"aa96c30","agent_type":"voltagent-lang:flutter-expert","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"aaa63b7","agent_type":"voltagent-infra:devops-engineer","event":"agent_start","parent_mode":"none"}
+{"t":0,"agent":"ad27245","agent_type":"unknown","event":"agent_stop","success":true}
+{"t":0,"agent":"aaa63b7","agent_type":"voltagent-infra:devops-engineer","event":"agent_stop","success":true,"duration_ms":284043}
+{"t":0,"agent":"a199089","agent_type":"voltagent-lang:flutter-expert","event":"agent_stop","success":true,"duration_ms":488086}
+{"t":0,"agent":"a3c1d86","agent_type":"voltagent-lang:flutter-expert","event":"agent_stop","success":true,"duration_ms":1619879}
