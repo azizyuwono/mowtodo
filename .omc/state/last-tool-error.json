@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd /c/Users/Aziz\\\\ Yuwono/Documents/Development/desktop/mowtodo && git worktree remove .worktrees/phase1-implementation && git branch -d feature/phase1-implementation\",\"description\":\"Remov...",
-  "error": "Exit code 128\nfatal: '.worktrees/phase1-implementation' contains modified or untracked files, use --force to delete it",
-  "timestamp": "2026-03-23T04:02:36.897Z",
-  "retry_count": 2
-}
