@@ -101,7 +101,7 @@ class _AddTodoInputState extends ConsumerState<AddTodoInput>
       builder: (context, child) {
         return Container(
           padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacing.lg,
+            horizontal: AppSpacing.xl,
             vertical: AppSpacing.xl,
           ),
           decoration: BoxDecoration(
@@ -118,11 +118,11 @@ class _AddTodoInputState extends ConsumerState<AddTodoInput>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(bottom: AppSpacing.lg),
+                padding: const EdgeInsets.only(bottom: AppSpacing.xl),
                 child: Row(
                   children: [
-                    Icon(Icons.search, color: AppColors.textSecondary, size: 20),
-                    const SizedBox(width: AppSpacing.md),
+                    Icon(Icons.search_outlined, color: AppColors.textSecondary, size: 22),
+                    const SizedBox(width: AppSpacing.lg),
                     Expanded(
                       child: TextField(
                         controller: _searchController,
@@ -144,7 +144,7 @@ class _AddTodoInputState extends ConsumerState<AddTodoInput>
                           _searchController.clear();
                           ref.read(filterProvider.notifier).clearSearch();
                         },
-                        child: Icon(Icons.close, color: AppColors.textSecondary, size: 18),
+                        child: Icon(Icons.close_outlined, color: AppColors.textSecondary, size: 20),
                       ),
                   ],
                 ),

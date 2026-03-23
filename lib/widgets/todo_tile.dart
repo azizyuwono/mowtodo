@@ -163,9 +163,9 @@ class _TodoTileState extends State<TodoTile>
                     opacity: _isHovering ? 1 : 0.3,
                     duration: const Duration(milliseconds: 200),
                     child: IconButton(
-                      icon: const Icon(Icons.close),
+                      icon: const Icon(Icons.close_outlined),
                       onPressed: widget.onDelete,
-                      iconSize: 18,
+                      iconSize: 20,
                       color: AppColors.textSecondary,
                       splashRadius: 20,
                     ),

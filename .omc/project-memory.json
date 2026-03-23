@@ -143,15 +143,15 @@
   },
   "hotPaths": [
     {
-      "path": "lib\\screens\\home_screen.dart",
-      "accessCount": 8,
-      "lastAccessed": 1774233188978,
+      "path": "lib\\widgets\\add_todo_input.dart",
+      "accessCount": 10,
+      "lastAccessed": 1774239675771,
       "type": "file"
     },
     {
-      "path": "lib\\widgets\\add_todo_input.dart",
-      "accessCount": 5,
-      "lastAccessed": 1774233204665,
+      "path": "lib\\screens\\home_screen.dart",
+      "accessCount": 8,
+      "lastAccessed": 1774233188978,
       "type": "file"
     },
     {
@@ -179,9 +179,21 @@
       "type": "file"
     },
     {
+      "path": "lib\\widgets\\priority_filter_bar.dart",
+      "accessCount": 3,
+      "lastAccessed": 1774239719343,
+      "type": "file"
+    },
+    {
       "path": "lib\\widgets\\empty_state.dart",
       "accessCount": 2,
       "lastAccessed": 1774232999265,
+      "type": "file"
+    },
+    {
+      "path": "lib\\widgets\\todo_tile.dart",
+      "accessCount": 2,
+      "lastAccessed": 1774239749143,
       "type": "file"
     },
     {
@@ -200,6 +212,18 @@
       "path": "lib\\providers\\todo_provider.dart",
       "accessCount": 1,
       "lastAccessed": 1774234826123,
+      "type": "file"
+    },
+    {
+      "path": "docs\\superpowers\\specs\\2026-03-23-phase1-design.md",
+      "accessCount": 1,
+      "lastAccessed": 1774236419304,
+      "type": "file"
+    },
+    {
+      "path": "docs\\superpowers\\plans\\2026-03-23-phase1-implementation.md",
+      "accessCount": 1,
+      "lastAccessed": 1774236503350,
       "type": "file"
     }
   ],

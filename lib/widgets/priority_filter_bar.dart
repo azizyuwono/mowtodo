@@ -16,8 +16,8 @@ class PriorityFilterBar extends ConsumerWidget {
 
     return Container(
       padding: const EdgeInsets.symmetric(
-        horizontal: AppSpacing.lg,
-        vertical: AppSpacing.md,
+        horizontal: AppSpacing.xl,
+        vertical: AppSpacing.lg,
       ),
       decoration: BoxDecoration(
         border: Border(
@@ -35,19 +35,19 @@ class PriorityFilterBar extends ConsumerWidget {
             value: filterState.showHigh,
             onChanged: (_) => filterNotifier.togglePriority(Priority.high),
           ),
-          const SizedBox(width: AppSpacing.lg),
+          const SizedBox(width: AppSpacing.xl),
           _FilterCheckbox(
             label: 'Medium',
             value: filterState.showMedium,
             onChanged: (_) => filterNotifier.togglePriority(Priority.medium),
           ),
-          const SizedBox(width: AppSpacing.lg),
+          const SizedBox(width: AppSpacing.xl),
           _FilterCheckbox(
             label: 'Low',
             value: filterState.showLow,
             onChanged: (_) => filterNotifier.togglePriority(Priority.low),
           ),
-          const SizedBox(width: AppSpacing.lg),
+          const SizedBox(width: AppSpacing.xl),
           _FilterCheckbox(
             label: 'Completed',
             value: filterState.showCompleted,
