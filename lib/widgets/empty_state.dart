@@ -21,7 +21,7 @@ class EmptyState extends StatelessWidget {
           Text(
             'No tasks yet.',
             style: AppTypography.displaySmall.copyWith(
-              color: AppColors.charcoal,
+              color: AppColors.textPrimary,
               height: 1.4,
             ),
           ),
@@ -29,7 +29,7 @@ class EmptyState extends StatelessWidget {
           Text(
             'Create your first task to stay focused.',
             style: AppTypography.bodyMedium.copyWith(
-              color: AppColors.darkGray,
+              color: AppColors.textSecondary,
               height: 1.5,
             ),
             textAlign: TextAlign.center,
