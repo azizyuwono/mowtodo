@@ -6,8 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mowtodo/core/database/todo_database.dart' as db;
 import 'package:mowtodo/models/todo.dart';
-import 'package:mowtodo/providers/todo_provider.dart';
-import 'package:mowtodo/repositories/todo_repository.dart';
+import 'package:mowtodo/providers/database_provider.dart';
 import 'package:mowtodo/screens/home_screen.dart';
 
 // ---------------------------------------------------------------------------
@@ -88,10 +87,9 @@ class FakeDatabase implements db.AppDatabase {
 // ---------------------------------------------------------------------------
 
 Widget buildHomeScreen(FakeDatabase fakeDb) {
-  final repo = TodoRepository(fakeDb);
   return ProviderScope(
     overrides: [
-      todoNotifierProvider.overrideWith((ref) => TodoNotifier(repo)),
+      databaseProvider.overrideWithValue(AsyncValue.data(fakeDb)),
     ],
     child: const MaterialApp(home: HomeScreen()),
   );

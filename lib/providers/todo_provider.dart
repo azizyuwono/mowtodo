@@ -3,24 +3,23 @@ import '../models/todo.dart';
 import '../repositories/todo_repository.dart';
 import 'database_provider.dart';
 
-final todoRepositoryProvider = Provider((ref) {
-  final db = ref.watch(databaseProvider).valueOrNull;
-  if (db == null) throw StateError('Database not initialized');
+final todoRepositoryProvider = FutureProvider((ref) async {
+  final db = await ref.watch(databaseProvider.future);
   return TodoRepository(db);
 });
 
 final todoListProvider = StreamProvider<List<Todo>>((ref) async* {
-  final repository = ref.watch(todoRepositoryProvider);
+  final repository = await ref.watch(todoRepositoryProvider.future);
   yield* repository.watchAllTodos();
 });
 
 final activeTodoListProvider = StreamProvider<List<Todo>>((ref) async* {
-  final repository = ref.watch(todoRepositoryProvider);
+  final repository = await ref.watch(todoRepositoryProvider.future);
   yield* repository.watchActiveTodos();
 });
 
 final completedTodoListProvider = StreamProvider<List<Todo>>((ref) async* {
-  final repository = ref.watch(todoRepositoryProvider);
+  final repository = await ref.watch(todoRepositoryProvider.future);
   yield* repository.watchCompletedTodos();
 });
 
@@ -41,20 +40,22 @@ final completedTodoCountProvider = StreamProvider<int>((ref) async* {
 });
 
 final todoNotifierProvider =
-    StateNotifierProvider<TodoNotifier, AsyncValue<List<Todo>>>((ref) {
-  final repository = ref.watch(todoRepositoryProvider);
-  return TodoNotifier(repository);
+    NotifierProvider<TodoNotifier, AsyncValue<List<Todo>>>(() {
+  return TodoNotifier();
 });
 
-class TodoNotifier extends StateNotifier<AsyncValue<List<Todo>>> {
-  final TodoRepository _repository;
+class TodoNotifier extends Notifier<AsyncValue<List<Todo>>> {
+  late TodoRepository _repository;
 
-  TodoNotifier(this._repository) : super(const AsyncValue.loading()) {
+  @override
+  AsyncValue<List<Todo>> build() {
     _init();
+    return const AsyncValue.loading();
   }
 
   Future<void> _init() async {
     try {
+      _repository = await ref.watch(todoRepositoryProvider.future);
       final todos = await _repository.getAllTodos();
       state = AsyncValue.data(todos);
     } catch (e, st) {

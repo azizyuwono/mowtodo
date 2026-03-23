@@ -155,15 +155,51 @@
       "type": "file"
     },
     {
+      "path": "test\\widget\\home_screen_test.dart",
+      "accessCount": 4,
+      "lastAccessed": 1774234991489,
+      "type": "file"
+    },
+    {
+      "path": "test\\widget\\todo_app_page_test.dart",
+      "accessCount": 4,
+      "lastAccessed": 1774235006491,
+      "type": "file"
+    },
+    {
       "path": "lib\\widgets\\todo_stats.dart",
       "accessCount": 3,
       "lastAccessed": 1774232972435,
       "type": "file"
     },
     {
+      "path": "lib\\main.dart",
+      "accessCount": 3,
+      "lastAccessed": 1774233966581,
+      "type": "file"
+    },
+    {
       "path": "lib\\widgets\\empty_state.dart",
       "accessCount": 2,
       "lastAccessed": 1774232999265,
+      "type": "file"
+    },
+    {
+      "path": "lib\\providers\\database_provider.dart",
+      "accessCount": 1,
+      "lastAccessed": 1774233913145,
+      "type": "file"
+    },
+    {
+      "path": "pubspec.yaml",
+      "accessCount": 1,
+      "lastAccessed": 1774234808689,
+      "type": "file"
+    },
+    {
+      "path": "lib\\providers\\todo_provider.dart",
+      "accessCount": 1,
+      "lastAccessed": 1774234826123,
       "type": "file"
     }
   ],

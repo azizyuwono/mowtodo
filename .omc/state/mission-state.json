@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-23T02:25:56.203Z",
+  "updatedAt": "2026-03-23T02:50:37.678Z",
   "missions": [
     {
       "id": "session:20c608fb-e383-4519-9f24-de1e7a588151:none",
@@ -7,7 +7,7 @@
       "name": "none",
       "objective": "Session mission",
       "createdAt": "2026-03-22T18:57:36.952Z",
-      "updatedAt": "2026-03-23T02:25:56.203Z",
+      "updatedAt": "2026-03-23T02:50:37.678Z",
       "status": "done",
       "workerCount": 5,
       "taskCounts": {
@@ -27,7 +27,7 @@
           "currentStep": null,
           "latestUpdate": "completed",
           "completedSummary": null,
-          "updatedAt": "2026-03-23T02:25:56.203Z"
+          "updatedAt": "2026-03-23T02:50:37.678Z"
         },
         {
           "name": "voltagent-lang:flutter-expert:a199089",
@@ -174,6 +174,38 @@
           "agent": "voltagent-lang:flutter-expert:a3b47f3",
           "detail": "completed",
           "sourceKey": "session-stop:ab6a1b3b92b460bb7"
+        },
+        {
+          "id": "session-stop:abcf0310f03af4563:2026-03-23T02:35:26.707Z",
+          "at": "2026-03-23T02:35:26.707Z",
+          "kind": "completion",
+          "agent": "voltagent-lang:flutter-expert:a3b47f3",
+          "detail": "completed",
+          "sourceKey": "session-stop:abcf0310f03af4563"
+        },
+        {
+          "id": "session-stop:a4788f41a3a9d4da2:2026-03-23T02:35:34.097Z",
+          "at": "2026-03-23T02:35:34.097Z",
+          "kind": "completion",
+          "agent": "voltagent-lang:flutter-expert:a3b47f3",
+          "detail": "completed",
+          "sourceKey": "session-stop:a4788f41a3a9d4da2"
+        },
+        {
+          "id": "session-stop:acb00561c59965f89:2026-03-23T02:43:38.975Z",
+          "at": "2026-03-23T02:43:38.975Z",
+          "kind": "completion",
+          "agent": "voltagent-lang:flutter-expert:a3b47f3",
+          "detail": "completed",
+          "sourceKey": "session-stop:acb00561c59965f89"
+        },
+        {
+          "id": "session-stop:ab81a6cd848b2b225:2026-03-23T02:50:37.678Z",
+          "at": "2026-03-23T02:50:37.678Z",
+          "kind": "completion",
+          "agent": "voltagent-lang:flutter-expert:a3b47f3",
+          "detail": "completed",
+          "sourceKey": "session-stop:ab81a6cd848b2b225"
         }
       ]
     }

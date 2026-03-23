@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd \\\"/c/Users/Aziz Yuwono/Documents/Development/desktop/mowtodo\\\" && flutter analyze lib/screens/home_screen.dart 2>&1\",\"description\":\"Check for errors in home_screen.dart\"}",
-  "error": "Exit code 1\nAnalyzing home_screen.dart...                                   \n\n  error - '_HomeScreenState.build' ('Widget Function(BuildContext, WidgetRef)') isn't a valid override of 'State.build' ('Widget Function(BuildContext)') - lib\\screens\\home_screen.dart:44:10 - invalid_override\n\n1 issue found. (ran in 4.4s)",
-  "timestamp": "2026-03-23T02:32:29.765Z",
+  "tool_input_preview": "{\"command\":\"cd \\\"/c/Users/Aziz Yuwono/Documents/Development/desktop/mowtodo\\\" && flutter analyze 2>&1\",\"description\":\"Check for compilation errors after Riverpod 3 migration\"}",
+  "error": "Exit code 1\nAnalyzing mowtodo...                                            \n\nwarning - Unused import: 'package:mowtodo/providers/todo_provider.dart' - test\\widget\\home_screen_test.dart:9:8 - unused_import\nwarning - Unused import: 'package:mowtodo/repositories/todo_repository.dart' - test\\widget\\home_screen_test.dart:11:8 - unused_import\nwarning - Unused import: 'package:mowtodo/providers/todo_provider.dart' - test\\widget\\todo_app_page_test.dart:8:8 - unused_import\nwarning - Unused import: 'pack...",
+  "timestamp": "2026-03-23T03:02:59.461Z",
   "retry_count": 1
 }
