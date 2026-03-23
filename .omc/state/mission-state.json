@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-03-22T19:42:33.441Z",
+  "updatedAt": "2026-03-23T02:25:56.203Z",
   "missions": [
     {
       "id": "session:20c608fb-e383-4519-9f24-de1e7a588151:none",
@@ -7,7 +7,7 @@
       "name": "none",
       "objective": "Session mission",
       "createdAt": "2026-03-22T18:57:36.952Z",
-      "updatedAt": "2026-03-22T19:42:33.441Z",
+      "updatedAt": "2026-03-23T02:25:56.203Z",
       "status": "done",
       "workerCount": 5,
       "taskCounts": {
@@ -27,7 +27,7 @@
           "currentStep": null,
           "latestUpdate": "completed",
           "completedSummary": null,
-          "updatedAt": "2026-03-22T19:42:33.441Z"
+          "updatedAt": "2026-03-23T02:25:56.203Z"
         },
         {
           "name": "voltagent-lang:flutter-expert:a199089",
@@ -158,6 +158,22 @@
           "agent": "voltagent-lang:flutter-expert:a3b47f3",
           "detail": "completed",
           "sourceKey": "session-stop:a3b47f3cdf8689652"
+        },
+        {
+          "id": "session-stop:a9b86eaddaedd574a:2026-03-22T19:47:57.552Z",
+          "at": "2026-03-22T19:47:57.552Z",
+          "kind": "completion",
+          "agent": "voltagent-lang:flutter-expert:a3b47f3",
+          "detail": "completed",
+          "sourceKey": "session-stop:a9b86eaddaedd574a"
+        },
+        {
+          "id": "session-stop:ab6a1b3b92b460bb7:2026-03-23T02:25:56.203Z",
+          "at": "2026-03-23T02:25:56.203Z",
+          "kind": "completion",
+          "agent": "voltagent-lang:flutter-expert:a3b47f3",
+          "detail": "completed",
+          "sourceKey": "session-stop:ab6a1b3b92b460bb7"
         }
       ]
     }

@@ -1,0 +1,171 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1774232866262,
+  "projectRoot": "C:\\Users\\Aziz Yuwono\\Documents\\Development\\desktop\\mowtodo",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "docs",
+      "lib",
+      "test"
+    ],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "android": {
+      "path": "android",
+      "purpose": null,
+      "fileCount": 8,
+      "lastAccessed": 1774232866186,
+      "keyFiles": [
+        "build.gradle.kts",
+        "gradle.properties",
+        "gradlew",
+        "gradlew.bat",
+        "local.properties"
+      ]
+    },
+    "build": {
+      "path": "build",
+      "purpose": "Build output",
+      "fileCount": 2,
+      "lastAccessed": 1774232866187,
+      "keyFiles": [
+        "8730b13ca0249799964d0a71255a8f3b.cache.dill.track.dill"
+      ]
+    },
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 0,
+      "lastAccessed": 1774232866188,
+      "keyFiles": []
+    },
+    "ios": {
+      "path": "ios",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1774232866188,
+      "keyFiles": []
+    },
+    "lib": {
+      "path": "lib",
+      "purpose": "Library code",
+      "fileCount": 1,
+      "lastAccessed": 1774232866189,
+      "keyFiles": [
+        "main.dart"
+      ]
+    },
+    "linux": {
+      "path": "linux",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774232866189,
+      "keyFiles": [
+        "CMakeLists.txt"
+      ]
+    },
+    "macos": {
+      "path": "macos",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1774232866190,
+      "keyFiles": []
+    },
+    "test": {
+      "path": "test",
+      "purpose": "Test files",
+      "fileCount": 0,
+      "lastAccessed": 1774232866190,
+      "keyFiles": []
+    },
+    "web": {
+      "path": "web",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1774232866191,
+      "keyFiles": [
+        "favicon.png",
+        "index.html",
+        "manifest.json"
+      ]
+    },
+    "windows": {
+      "path": "windows",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774232866191,
+      "keyFiles": [
+        "CMakeLists.txt"
+      ]
+    },
+    "android\\app": {
+      "path": "android\\app",
+      "purpose": "Application code",
+      "fileCount": 1,
+      "lastAccessed": 1774232866192,
+      "keyFiles": [
+        "build.gradle.kts"
+      ]
+    },
+    "lib\\models": {
+      "path": "lib\\models",
+      "purpose": "Data models",
+      "fileCount": 2,
+      "lastAccessed": 1774232866194,
+      "keyFiles": [
+        "todo.dart",
+        "todo_state.dart"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "lib\\screens\\home_screen.dart",
+      "accessCount": 8,
+      "lastAccessed": 1774233188978,
+      "type": "file"
+    },
+    {
+      "path": "lib\\widgets\\add_todo_input.dart",
+      "accessCount": 5,
+      "lastAccessed": 1774233204665,
+      "type": "file"
+    },
+    {
+      "path": "lib\\widgets\\todo_stats.dart",
+      "accessCount": 3,
+      "lastAccessed": 1774232972435,
+      "type": "file"
+    },
+    {
+      "path": "lib\\widgets\\empty_state.dart",
+      "accessCount": 2,
+      "lastAccessed": 1774232999265,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

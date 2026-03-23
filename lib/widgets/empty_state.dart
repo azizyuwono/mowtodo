@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../core/theme/app_colors.dart';
+import '../core/theme/app_spacing.dart';
 import '../core/theme/app_typography.dart';
 
 class EmptyState extends StatelessWidget {
@@ -12,18 +14,25 @@ class EmptyState extends StatelessWidget {
         children: [
           Icon(
             Icons.inbox_outlined,
-            size: 64,
-            color: Colors.grey[300],
+            size: 72,
+            color: AppColors.mediumGray,
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: AppSpacing.xl),
           Text(
             'No tasks yet.',
-            style: AppTypography.displaySmall,
+            style: AppTypography.displaySmall.copyWith(
+              color: AppColors.charcoal,
+              height: 1.4,
+            ),
           ),
-          const SizedBox(height: 8),
+          const SizedBox(height: AppSpacing.lg),
           Text(
-            'Add one to get started.',
-            style: AppTypography.bodyMedium,
+            'Create your first task to stay focused.',
+            style: AppTypography.bodyMedium.copyWith(
+              color: AppColors.darkGray,
+              height: 1.5,
+            ),
+            textAlign: TextAlign.center,
           ),
         ],
       ),

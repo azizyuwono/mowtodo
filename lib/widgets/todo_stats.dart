@@ -20,23 +20,28 @@ class TodoStats extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: AppSpacing.lg,
-        vertical: AppSpacing.lg,
+        vertical: AppSpacing.xl,
       ),
       decoration: BoxDecoration(
-        color: AppColors.lightGray,
         border: Border(
           bottom: BorderSide(
             color: AppColors.gray,
-            width: 1,
+            width: 0.5,
           ),
         ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          _StatItem(label: 'Total', value: total),
-          _StatItem(label: 'Active', value: active, color: AppColors.accent),
-          _StatItem(label: 'Done', value: completed, color: AppColors.success),
+          Expanded(
+            child: _StatItem(label: 'Total', value: total),
+          ),
+          Expanded(
+            child: _StatItem(label: 'Active', value: active, color: AppColors.accent),
+          ),
+          Expanded(
+            child: _StatItem(label: 'Done', value: completed, color: AppColors.success),
+          ),
         ],
       ),
     );
@@ -57,18 +62,23 @@ class _StatItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
           '$value',
           style: AppTypography.displayMedium.copyWith(
             color: color ?? AppColors.charcoal,
-            fontSize: 24,
+            fontSize: 32,
+            fontWeight: FontWeight.w600,
           ),
         ),
-        const SizedBox(height: AppSpacing.xs),
+        const SizedBox(height: AppSpacing.md),
         Text(
           label,
-          style: AppTypography.labelSmall,
+          style: AppTypography.labelSmall.copyWith(
+            color: AppColors.darkGray,
+            letterSpacing: 0.5,
+          ),
         ),
       ],
     );
