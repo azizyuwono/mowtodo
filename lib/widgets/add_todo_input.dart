@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/theme/app_colors.dart';
 import '../core/theme/app_spacing.dart';
 import '../core/theme/app_typography.dart';
 import '../models/todo.dart';
+import '../providers/filter_provider.dart';
 
-class AddTodoInput extends StatefulWidget {
+class AddTodoInput extends ConsumerStatefulWidget {
   final Function(String, {String? description, Priority priority}) onAdd;
 
   const AddTodoInput({
@@ -13,13 +15,14 @@ class AddTodoInput extends StatefulWidget {
   });
 
   @override
-  State<AddTodoInput> createState() => _AddTodoInputState();
+  ConsumerState<AddTodoInput> createState() => _AddTodoInputState();
 }
 
-class _AddTodoInputState extends State<AddTodoInput>
+class _AddTodoInputState extends ConsumerState<AddTodoInput>
     with SingleTickerProviderStateMixin {
   late TextEditingController _titleController;
   late TextEditingController _descriptionController;
+  late TextEditingController _searchController;
   late FocusNode _titleFocus;
   late FocusNode _descriptionFocus;
   late AnimationController _focusController;
@@ -34,6 +37,7 @@ class _AddTodoInputState extends State<AddTodoInput>
     super.initState();
     _titleController = TextEditingController();
     _descriptionController = TextEditingController();
+    _searchController = TextEditingController();
     _titleFocus = FocusNode();
     _descriptionFocus = FocusNode();
     _focusController = AnimationController(
@@ -42,6 +46,10 @@ class _AddTodoInputState extends State<AddTodoInput>
     );
     _focusBorderOpacity = Tween<double>(begin: 0.3, end: 1.0)
         .animate(CurvedAnimation(parent: _focusController, curve: Curves.easeOut));
+
+    _searchController.addListener(() {
+      ref.read(filterProvider.notifier).updateSearch(_searchController.text);
+    });
 
     _titleFocus.addListener(() {
       setState(() => _titleFocused = _titleFocus.hasFocus);
@@ -66,6 +74,7 @@ class _AddTodoInputState extends State<AddTodoInput>
   void dispose() {
     _titleController.dispose();
     _descriptionController.dispose();
+    _searchController.dispose();
     _titleFocus.dispose();
     _descriptionFocus.dispose();
     _focusController.dispose();
@@ -103,7 +112,7 @@ class _AddTodoInputState extends State<AddTodoInput>
           decoration: BoxDecoration(
             border: Border(
               bottom: BorderSide(
-                color: AppColors.gray.withValues(
+                color: AppColors.lightGray.withValues(
                   alpha: 0.5 + (_focusBorderOpacity.value * 0.5),
                 ),
                 width: 0.5,
@@ -113,6 +122,38 @@ class _AddTodoInputState extends State<AddTodoInput>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Padding(
+                padding: const EdgeInsets.only(bottom: AppSpacing.lg),
+                child: Row(
+                  children: [
+                    Icon(Icons.search, color: AppColors.textSecondary, size: 20),
+                    const SizedBox(width: AppSpacing.md),
+                    Expanded(
+                      child: TextField(
+                        controller: _searchController,
+                        decoration: InputDecoration(
+                          hintText: 'Search tasks...',
+                          border: InputBorder.none,
+                          filled: false,
+                          contentPadding: EdgeInsets.zero,
+                          hintStyle: AppTypography.bodyMedium.copyWith(
+                            color: AppColors.textSecondary,
+                          ),
+                        ),
+                        style: AppTypography.bodyMedium,
+                      ),
+                    ),
+                    if (_searchController.text.isNotEmpty)
+                      GestureDetector(
+                        onTap: () {
+                          _searchController.clear();
+                          ref.read(filterProvider.notifier).clearSearch();
+                        },
+                        child: Icon(Icons.close, color: AppColors.textSecondary, size: 18),
+                      ),
+                  ],
+                ),
+              ),
               Row(
                 children: [
                   Expanded(
@@ -125,7 +166,7 @@ class _AddTodoInputState extends State<AddTodoInput>
                         filled: false,
                         contentPadding: EdgeInsets.zero,
                         hintStyle: AppTypography.bodyMedium.copyWith(
-                          color: AppColors.darkGray,
+                          color: AppColors.textSecondary,
                         ),
                       ),
                       style: AppTypography.bodyLarge.copyWith(
@@ -172,7 +213,7 @@ class _AddTodoInputState extends State<AddTodoInput>
                       filled: false,
                       contentPadding: EdgeInsets.zero,
                       hintStyle: AppTypography.bodySmall.copyWith(
-                        color: AppColors.darkGray,
+                        color: AppColors.textSecondary,
                       ),
                     ),
                     style: AppTypography.bodySmall.copyWith(
@@ -196,7 +237,7 @@ class _AddTodoInputState extends State<AddTodoInput>
                     child: Text(
                       'Add details',
                       style: AppTypography.labelSmall.copyWith(
-                        color: AppColors.accent,
+                        color: AppColors.nearBlack,
                       ),
                     ),
                   ),
