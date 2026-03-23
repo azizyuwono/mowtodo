@@ -20,11 +20,11 @@ class AddTodoInput extends ConsumerStatefulWidget {
 
 class _AddTodoInputState extends ConsumerState<AddTodoInput>
     with SingleTickerProviderStateMixin {
-  late TextEditingController _titleController;
-  late TextEditingController _descriptionController;
-  late TextEditingController _searchController;
-  late FocusNode _titleFocus;
-  late FocusNode _descriptionFocus;
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
+  final FocusNode _titleFocus = FocusNode();
+  final FocusNode _descriptionFocus = FocusNode();
   late AnimationController _focusController;
   late Animation<double> _focusBorderOpacity;
   Priority _selectedPriority = Priority.medium;
@@ -35,11 +35,6 @@ class _AddTodoInputState extends ConsumerState<AddTodoInput>
   @override
   void initState() {
     super.initState();
-    _titleController = TextEditingController();
-    _descriptionController = TextEditingController();
-    _searchController = TextEditingController();
-    _titleFocus = FocusNode();
-    _descriptionFocus = FocusNode();
     _focusController = AnimationController(
       duration: const Duration(milliseconds: 200),
       vsync: this,
