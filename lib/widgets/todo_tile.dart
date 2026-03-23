@@ -48,9 +48,9 @@ class _TodoTileState extends State<TodoTile>
   Color _getPriorityColor() {
     switch (widget.todo.priority) {
       case Priority.high:
-        return AppColors.error;
+        return AppColors.charcoal;
       case Priority.medium:
-        return AppColors.accent;
+        return AppColors.gray;
       case Priority.low:
         return AppColors.mediumGray;
     }
@@ -73,7 +73,7 @@ class _TodoTileState extends State<TodoTile>
           return Container(
             color: Color.lerp(
               Colors.transparent,
-              AppColors.accent,
+              AppColors.softGray,
               _hoverOpacity.value,
             ),
             child: child,
@@ -91,7 +91,7 @@ class _TodoTileState extends State<TodoTile>
               decoration: BoxDecoration(
                 border: Border(
                   bottom: BorderSide(
-                    color: AppColors.gray,
+                    color: AppColors.lightGray,
                     width: 0.5,
                   ),
                 ),
@@ -119,8 +119,8 @@ class _TodoTileState extends State<TodoTile>
                           widget.todo.title,
                           style: AppTypography.bodyLarge.copyWith(
                             color: widget.todo.isCompleted
-                                ? AppColors.darkGray
-                                : AppColors.charcoal,
+                                ? AppColors.mediumGray
+                                : AppColors.textPrimary,
                             decoration: widget.todo.isCompleted
                                 ? TextDecoration.lineThrough
                                 : null,
@@ -166,7 +166,7 @@ class _TodoTileState extends State<TodoTile>
                       icon: const Icon(Icons.close),
                       onPressed: widget.onDelete,
                       iconSize: 18,
-                      color: AppColors.darkGray,
+                      color: AppColors.textSecondary,
                       splashRadius: 20,
                     ),
                   ),
