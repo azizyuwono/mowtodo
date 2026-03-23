@@ -25,7 +25,7 @@ class TodoStats extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color: AppColors.gray,
+            color: AppColors.lightGray,
             width: 0.5,
           ),
         ),
@@ -67,7 +67,7 @@ class _StatItem extends StatelessWidget {
         Text(
           '$value',
           style: AppTypography.displayMedium.copyWith(
-            color: color ?? AppColors.charcoal,
+            color: color ?? AppColors.textPrimary,
             fontSize: 32,
             fontWeight: FontWeight.w600,
           ),
@@ -76,7 +76,7 @@ class _StatItem extends StatelessWidget {
         Text(
           label,
           style: AppTypography.labelSmall.copyWith(
-            color: AppColors.darkGray,
+            color: AppColors.textSecondary,
             letterSpacing: 0.5,
           ),
         ),
